@@ -12,6 +12,19 @@ local AimbotButton = Instance.new("TextButton")
 local FOVCircle = Instance.new("Frame")
 local FOVSlider = Instance.new("TextBox")
 local FOVTitle = Instance.new("TextLabel")
+local SpeedBoostButton = Instance.new("TextButton")
+local KeybindButton = Instance.new("TextButton")
+local KeybindFrame = Instance.new("Frame")
+local KeybindTitle = Instance.new("TextLabel")
+local FlyKeybind = Instance.new("TextBox")
+local FlyKeybindTitle = Instance.new("TextLabel")
+local ESPKeybind = Instance.new("TextBox")
+local ESPKeybindTitle = Instance.new("TextLabel")
+local AimbotKeybind = Instance.new("TextBox")
+local AimbotKeybindTitle = Instance.new("TextLabel")
+local SpeedKeybind = Instance.new("TextBox")
+local SpeedKeybindTitle = Instance.new("TextLabel")
+local CloseKeybinds = Instance.new("TextButton")
 
 --Properties:
 barsyccc.Name = "barsyccc"
@@ -23,7 +36,7 @@ MainFrame.Parent = barsyccc
 MainFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.100000001, 0, 0.300000012, 0)
-MainFrame.Size = UDim2.new(0, 250, 0, 200)
+MainFrame.Size = UDim2.new(0, 250, 0, 250)
 MainFrame.Active = true
 MainFrame.Draggable = true
 
@@ -55,9 +68,6 @@ Close.Font = Enum.Font.SciFi
 Close.Text = "X"
 Close.TextColor3 = Color3.fromRGB(255, 255, 255)
 Close.TextSize = 14.000
-Close.MouseButton1Click:Connect(function()
-	barsyccc:Destroy()
-end)
 
 FlyButton.Name = "FlyButton"
 FlyButton.Parent = MainFrame
@@ -116,6 +126,28 @@ AimbotButton.Text = "Aimbot: OFF"
 AimbotButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 AimbotButton.TextSize = 14.000
 
+SpeedBoostButton.Name = "SpeedBoostButton"
+SpeedBoostButton.Parent = MainFrame
+SpeedBoostButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+SpeedBoostButton.BorderSizePixel = 0
+SpeedBoostButton.Position = UDim2.new(0.0500000007, 0, 0.75, 0)
+SpeedBoostButton.Size = UDim2.new(0, 100, 0, 30)
+SpeedBoostButton.Font = Enum.Font.SciFi
+SpeedBoostButton.Text = "Speed: OFF"
+SpeedBoostButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedBoostButton.TextSize = 14.000
+
+KeybindButton.Name = "KeybindButton"
+KeybindButton.Parent = MainFrame
+KeybindButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+KeybindButton.BorderSizePixel = 0
+KeybindButton.Position = UDim2.new(0.550000012, 0, 0.75, 0)
+KeybindButton.Size = UDim2.new(0, 100, 0, 30)
+KeybindButton.Font = Enum.Font.SciFi
+KeybindButton.Text = "Keybinds"
+KeybindButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeybindButton.TextSize = 14.000
+
 FOVCircle.Name = "FOVCircle"
 FOVCircle.Parent = barsyccc
 FOVCircle.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
@@ -142,7 +174,7 @@ FOVSlider.Name = "FOVSlider"
 FOVSlider.Parent = MainFrame
 FOVSlider.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
 FOVSlider.BorderSizePixel = 0
-FOVSlider.Position = UDim2.new(0.550000012, 0, 0.75, 0)
+FOVSlider.Position = UDim2.new(0.550000012, 0, 0.85, 0)
 FOVSlider.Size = UDim2.new(0, 100, 0, 20)
 FOVSlider.Font = Enum.Font.SciFi
 FOVSlider.PlaceholderText = "100"
@@ -150,7 +182,137 @@ FOVSlider.Text = ""
 FOVSlider.TextColor3 = Color3.fromRGB(255, 255, 255)
 FOVSlider.TextSize = 12.000
 
+KeybindFrame.Name = "KeybindFrame"
+KeybindFrame.Parent = barsyccc
+KeybindFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+KeybindFrame.BorderSizePixel = 0
+KeybindFrame.Position = UDim2.new(0.400000006, 0, 0.300000012, 0)
+KeybindFrame.Size = UDim2.new(0, 200, 0, 180)
+KeybindFrame.Visible = false
+KeybindFrame.Active = true
+KeybindFrame.Draggable = true
+
+KeybindTitle.Name = "KeybindTitle"
+KeybindTitle.Parent = KeybindFrame
+KeybindTitle.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+KeybindTitle.BackgroundTransparency = 1.000
+KeybindTitle.BorderSizePixel = 0
+KeybindTitle.Size = UDim2.new(0, 200, 0, 20)
+KeybindTitle.Font = Enum.Font.SciFi
+KeybindTitle.Text = "Set Keybinds"
+KeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeybindTitle.TextSize = 14.000
+
+FlyKeybindTitle.Name = "FlyKeybindTitle"
+FlyKeybindTitle.Parent = KeybindFrame
+FlyKeybindTitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+FlyKeybindTitle.BackgroundTransparency = 1.000
+FlyKeybindTitle.BorderSizePixel = 0
+FlyKeybindTitle.Position = UDim2.new(0.0500000007, 0, 0.150000006, 0)
+FlyKeybindTitle.Size = UDim2.new(0, 80, 0, 20)
+FlyKeybindTitle.Font = Enum.Font.SciFi
+FlyKeybindTitle.Text = "Fly Key:"
+FlyKeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyKeybindTitle.TextSize = 12.000
+
+FlyKeybind.Name = "FlyKeybind"
+FlyKeybind.Parent = KeybindFrame
+FlyKeybind.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+FlyKeybind.BorderSizePixel = 0
+FlyKeybind.Position = UDim2.new(0.0500000007, 0, 0.25, 0)
+FlyKeybind.Size = UDim2.new(0, 180, 0, 20)
+FlyKeybind.Font = Enum.Font.SciFi
+FlyKeybind.PlaceholderText = "F"
+FlyKeybind.Text = ""
+FlyKeybind.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyKeybind.TextSize = 12.000
+
+ESPKeybindTitle.Name = "ESPKeybindTitle"
+ESPKeybindTitle.Parent = KeybindFrame
+ESPKeybindTitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ESPKeybindTitle.BackgroundTransparency = 1.000
+ESPKeybindTitle.BorderSizePixel = 0
+ESPKeybindTitle.Position = UDim2.new(0.0500000007, 0, 0.400000006, 0)
+ESPKeybindTitle.Size = UDim2.new(0, 80, 0, 20)
+ESPKeybindTitle.Font = Enum.Font.SciFi
+ESPKeybindTitle.Text = "ESP Key:"
+ESPKeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESPKeybindTitle.TextSize = 12.000
+
+ESPKeybind.Name = "ESPKeybind"
+ESPKeybind.Parent = KeybindFrame
+ESPKeybind.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+ESPKeybind.BorderSizePixel = 0
+ESPKeybind.Position = UDim2.new(0.0500000007, 0, 0.5, 0)
+ESPKeybind.Size = UDim2.new(0, 180, 0, 20)
+ESPKeybind.Font = Enum.Font.SciFi
+ESPKeybind.PlaceholderText = "V"
+ESPKeybind.Text = ""
+ESPKeybind.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESPKeybind.TextSize = 12.000
+
+AimbotKeybindTitle.Name = "AimbotKeybindTitle"
+AimbotKeybindTitle.Parent = KeybindFrame
+AimbotKeybindTitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+AimbotKeybindTitle.BackgroundTransparency = 1.000
+AimbotKeybindTitle.BorderSizePixel = 0
+AimbotKeybindTitle.Position = UDim2.new(0.0500000007, 0, 0.649999976, 0)
+AimbotKeybindTitle.Size = UDim2.new(0, 80, 0, 20)
+AimbotKeybindTitle.Font = Enum.Font.SciFi
+AimbotKeybindTitle.Text = "Aimbot Key:"
+AimbotKeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimbotKeybindTitle.TextSize = 12.000
+
+AimbotKeybind.Name = "AimbotKeybind"
+AimbotKeybind.Parent = KeybindFrame
+AimbotKeybind.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+AimbotKeybind.BorderSizePixel = 0
+AimbotKeybind.Position = UDim2.new(0.0500000007, 0, 0.75, 0)
+AimbotKeybind.Size = UDim2.new(0, 180, 0, 20)
+AimbotKeybind.Font = Enum.Font.SciFi
+AimbotKeybind.PlaceholderText = "R"
+AimbotKeybind.Text = ""
+AimbotKeybind.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimbotKeybind.TextSize = 12.000
+
+SpeedKeybindTitle.Name = "SpeedKeybindTitle"
+SpeedKeybindTitle.Parent = KeybindFrame
+SpeedKeybindTitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+SpeedKeybindTitle.BackgroundTransparency = 1.000
+SpeedKeybindTitle.BorderSizePixel = 0
+SpeedKeybindTitle.Position = UDim2.new(0.0500000007, 0, 0.899999976, 0)
+SpeedKeybindTitle.Size = UDim2.new(0, 80, 0, 20)
+SpeedKeybindTitle.Font = Enum.Font.SciFi
+SpeedKeybindTitle.Text = "Speed Key:"
+SpeedKeybindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedKeybindTitle.TextSize = 12.000
+
+SpeedKeybind.Name = "SpeedKeybind"
+SpeedKeybind.Parent = KeybindFrame
+SpeedKeybind.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+SpeedKeybind.BorderSizePixel = 0
+SpeedKeybind.Position = UDim2.new(0.0500000007, 0, 1, 0)
+SpeedKeybind.Size = UDim2.new(0, 180, 0, 20)
+SpeedKeybind.Font = Enum.Font.SciFi
+SpeedKeybind.PlaceholderText = "C"
+SpeedKeybind.Text = ""
+SpeedKeybind.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedKeybind.TextSize = 12.000
+
+CloseKeybinds.Name = "CloseKeybinds"
+CloseKeybinds.Parent = KeybindFrame
+CloseKeybinds.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+CloseKeybinds.BackgroundTransparency = 1.000
+CloseKeybinds.BorderSizePixel = 0
+CloseKeybinds.Position = UDim2.new(0.899999976, 0, 0, 0)
+CloseKeybinds.Size = UDim2.new(0, 20, 0, 20)
+CloseKeybinds.Font = Enum.Font.SciFi
+CloseKeybinds.Text = "X"
+CloseKeybinds.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseKeybinds.TextSize = 14.000
+
 -- Scripts:
+local UIS = game:GetService("UserInputService")
 local flyToggled = false
 local flySpeed = 50
 local bv = Instance.new("BodyVelocity")
@@ -159,7 +321,21 @@ bv.MaxForce = Vector3.new(100000,100000,100000)
 local bg = Instance.new("BodyGyro")
 bg.MaxTorque = Vector3.new(100000,100000,100000)
 
-FlyButton.MouseButton1Click:Connect(function()
+local espToggled = false
+local espObjects = {}
+
+local aimbotToggled = false
+local fov = 100
+
+local speedToggled = false
+local speedValue = 30
+
+local flyKey = "F"
+local espKey = "V"
+local aimbotKey = "R"
+local speedKey = "C"
+
+local function toggleFly()
     flyToggled = not flyToggled
     local character = game.Players.LocalPlayer.Character
     if not character or not character:FindFirstChild("HumanoidRootPart") then return end
@@ -169,17 +345,19 @@ FlyButton.MouseButton1Click:Connect(function()
         FlyButton.Text = "Fly: ON"
         bv.Parent = hrp
         bg.Parent = hrp
-        local function fly()
+        local flyConnection
+        flyConnection = game:GetService("RunService").RenderStepped:Connect(function()
             local cam = workspace.CurrentCamera
             bv.Velocity = cam.CFrame.LookVector * flySpeed
-        end
-        game:GetService("RunService").RenderStepped:Connect(fly)
+        end)
     else
         FlyButton.Text = "Fly: OFF"
         bv:Destroy()
         bg:Destroy()
     end
-end)
+end
+
+FlyButton.MouseButton1Click:Connect(toggleFly)
 
 FlySpeedSlider.FocusLost:Connect(function()
     local newSpeed = tonumber(FlySpeedSlider.Text)
@@ -189,10 +367,7 @@ FlySpeedSlider.FocusLost:Connect(function()
     FlySpeedSlider.Text = ""
 end)
 
-local espToggled = false
-local espObjects = {}
-
-ESPButton.MouseButton1Click:Connect(function()
+local function toggleESP()
     espToggled = not espToggled
     if espToggled then
         ESPButton.Text = "ESP: ON"
@@ -246,12 +421,11 @@ ESPButton.MouseButton1Click:Connect(function()
         end
         espObjects = {}
     end
-end)
+end
 
-local aimbotToggled = false
-local fov = 100
+ESPButton.MouseButton1Click:Connect(toggleESP)
 
-AimbotButton.MouseButton1Click:Connect(function()
+local function toggleAimbot()
     aimbotToggled = not aimbotToggled
     if aimbotToggled then
         AimbotButton.Text = "Aimbot: ON"
@@ -260,7 +434,26 @@ AimbotButton.MouseButton1Click:Connect(function()
         AimbotButton.Text = "Aimbot: OFF"
         FOVCircle.Visible = false
     end
-end)
+end
+
+AimbotButton.MouseButton1Click:Connect(toggleAimbot)
+
+local function toggleSpeed()
+    speedToggled = not speedToggled
+    local character = game.Players.LocalPlayer.Character
+    if not character or not character:FindFirstChild("Humanoid") then return end
+    local humanoid = character.Humanoid
+
+    if speedToggled then
+        SpeedBoostButton.Text = "Speed: ON"
+        humanoid.WalkSpeed = speedValue
+    else
+        SpeedBoostButton.Text = "Speed: OFF"
+        humanoid.WalkSpeed = 16
+    end
+end
+
+SpeedBoostButton.MouseButton1Click:Connect(toggleSpeed)
 
 FOVSlider.FocusLost:Connect(function()
     local newFOV = tonumber(FOVSlider.Text)
@@ -271,8 +464,82 @@ FOVSlider.FocusLost:Connect(function()
     FOVSlider.Text = ""
 end)
 
+KeybindButton.MouseButton1Click:Connect(function()
+    KeybindFrame.Visible = not KeybindFrame.Visible
+end)
+
+CloseKeybinds.MouseButton1Click:Connect(function()
+    KeybindFrame.Visible = false
+end)
+
+Close.MouseButton1Click:Connect(function()
+	barsyccc:Destroy()
+end)
+
+FlyKeybind.FocusLost:Connect(function()
+    if FlyKeybind.Text ~= "" then
+        flyKey = FlyKeybind.Text:upper()
+        FlyKeybind.Text = ""
+    end
+end)
+
+ESPKeybind.FocusLost:Connect(function()
+    if ESPKeybind.Text ~= "" then
+        espKey = ESPKeybind.Text:upper()
+        ESPKeybind.Text = ""
+    end
+end)
+
+AimbotKeybind.FocusLost:Connect(function()
+    if AimbotKeybind.Text ~= "" then
+        aimbotKey = AimbotKeybind.Text:upper()
+        AimbotKeybind.Text = ""
+    end
+end)
+
+SpeedKeybind.FocusLost:Connect(function()
+    if SpeedKeybind.Text ~= "" then
+        speedKey = SpeedKeybind.Text:upper()
+        SpeedKeybind.Text = ""
+    end
+end)
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+
+    if input.KeyCode == Enum.KeyCode[flyKey] then
+        toggleFly()
+    end
+
+    if input.KeyCode == Enum.KeyCode[espKey] then
+        toggleESP()
+    end
+
+    if input.KeyCode == Enum.KeyCode[aimbotKey] then
+        toggleAimbot()
+    end
+
+    if input.KeyCode == Enum.KeyCode[speedKey] then
+        toggleSpeed()
+    end
+end)
+
+local aimbotActive = false
+
+UIS.InputBegan:Connect(function(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        aimbotActive = true
+    end
+end)
+
+UIS.InputEnded:Connect(function(input, gameProcessed)
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        aimbotActive = false
+    end
+end)
+
 game:GetService("RunService").RenderStepped:Connect(function()
-    if aimbotToggled then
+    if aimbotToggled and aimbotActive then
         local closestPlayer = nil
         local closestDistance = fov
         local localPlayer = game.Players.LocalPlayer
