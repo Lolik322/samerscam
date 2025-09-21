@@ -1,0 +1,304 @@
+-- Instances:
+local barsyccc = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local TopBar = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local FlyButton = Instance.new("TextButton")
+local FlySpeedSlider = Instance.new("TextBox")
+local FlySpeedTitle = Instance.new("TextLabel")
+local ESPButton = Instance.new("TextButton")
+local AimbotButton = Instance.new("TextButton")
+local FOVCircle = Instance.new("Frame")
+local FOVSlider = Instance.new("TextBox")
+local FOVTitle = Instance.new("TextLabel")
+
+--Properties:
+barsyccc.Name = "barsyccc"
+barsyccc.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+barsyccc.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = barsyccc
+MainFrame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.100000001, 0, 0.300000012, 0)
+MainFrame.Size = UDim2.new(0, 250, 0, 200)
+MainFrame.Active = true
+MainFrame.Draggable = true
+
+TopBar.Name = "TopBar"
+TopBar.Parent = MainFrame
+TopBar.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+TopBar.BorderSizePixel = 0
+TopBar.Size = UDim2.new(0, 250, 0, 20)
+
+Title.Name = "Title"
+Title.Parent = TopBar
+Title.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 250, 0, 20)
+Title.Font = Enum.Font.SciFi
+Title.Text = "barsyc.cc"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 14.000
+
+Close.Name = "Close"
+Close.Parent = TopBar
+Close.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+Close.BackgroundTransparency = 1.000
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.920000017, 0, 0, 0)
+Close.Size = UDim2.new(0, 20, 0, 20)
+Close.Font = Enum.Font.SciFi
+Close.Text = "X"
+Close.TextColor3 = Color3.fromRGB(255, 255, 255)
+Close.TextSize = 14.000
+Close.MouseButton1Click:Connect(function()
+	barsyccc:Destroy()
+end)
+
+FlyButton.Name = "FlyButton"
+FlyButton.Parent = MainFrame
+FlyButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+FlyButton.BorderSizePixel = 0
+FlyButton.Position = UDim2.new(0.0500000007, 0, 0.150000006, 0)
+FlyButton.Size = UDim2.new(0, 100, 0, 30)
+FlyButton.Font = Enum.Font.SciFi
+FlyButton.Text = "Fly: OFF"
+FlyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyButton.TextSize = 14.000
+
+FlySpeedTitle.Name = "FlySpeedTitle"
+FlySpeedTitle.Parent = MainFrame
+FlySpeedTitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+FlySpeedTitle.BackgroundTransparency = 1.000
+FlySpeedTitle.BorderSizePixel = 0
+FlySpeedTitle.Position = UDim2.new(0.0500000007, 0, 0.349999994, 0)
+FlySpeedTitle.Size = UDim2.new(0, 100, 0, 15)
+FlySpeedTitle.Font = Enum.Font.SciFi
+FlySpeedTitle.Text = "Fly Speed:"
+FlySpeedTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlySpeedTitle.TextSize = 12.000
+
+FlySpeedSlider.Name = "FlySpeedSlider"
+FlySpeedSlider.Parent = MainFrame
+FlySpeedSlider.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+FlySpeedSlider.BorderSizePixel = 0
+FlySpeedSlider.Position = UDim2.new(0.0500000007, 0, 0.449999988, 0)
+FlySpeedSlider.Size = UDim2.new(0, 100, 0, 20)
+FlySpeedSlider.Font = Enum.Font.SciFi
+FlySpeedSlider.PlaceholderText = "50"
+FlySpeedSlider.Text = ""
+FlySpeedSlider.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlySpeedSlider.TextSize = 12.000
+
+ESPButton.Name = "ESPButton"
+ESPButton.Parent = MainFrame
+ESPButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+ESPButton.BorderSizePixel = 0
+ESPButton.Position = UDim2.new(0.550000012, 0, 0.150000006, 0)
+ESPButton.Size = UDim2.new(0, 100, 0, 30)
+ESPButton.Font = Enum.Font.SciFi
+ESPButton.Text = "ESP: OFF"
+ESPButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ESPButton.TextSize = 14.000
+
+AimbotButton.Name = "AimbotButton"
+AimbotButton.Parent = MainFrame
+AimbotButton.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+AimbotButton.BorderSizePixel = 0
+AimbotButton.Position = UDim2.new(0.550000012, 0, 0.449999988, 0)
+AimbotButton.Size = UDim2.new(0, 100, 0, 30)
+AimbotButton.Font = Enum.Font.SciFi
+AimbotButton.Text = "Aimbot: OFF"
+AimbotButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimbotButton.TextSize = 14.000
+
+FOVCircle.Name = "FOVCircle"
+FOVCircle.Parent = barsyccc
+FOVCircle.BackgroundColor3 = Color3.fromRGB(255, 105, 180)
+FOVCircle.BackgroundTransparency = 0.900
+FOVCircle.BorderColor3 = Color3.fromRGB(255, 105, 180)
+FOVCircle.Position = UDim2.new(0.5, 0, 0.5, 0)
+FOVCircle.Size = UDim2.new(0, 100, 0, 100)
+FOVCircle.AnchorPoint = Vector2.new(0.5, 0.5)
+FOVCircle.Visible = false
+
+FOVTitle.Name = "FOVTitle"
+FOVTitle.Parent = MainFrame
+FOVTitle.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+FOVTitle.BackgroundTransparency = 1.000
+FOVTitle.BorderSizePixel = 0
+FOVTitle.Position = UDim2.new(0.550000012, 0, 0.649999976, 0)
+FOVTitle.Size = UDim2.new(0, 100, 0, 15)
+FOVTitle.Font = Enum.Font.SciFi
+FOVTitle.Text = "FOV Size:"
+FOVTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+FOVTitle.TextSize = 12.000
+
+FOVSlider.Name = "FOVSlider"
+FOVSlider.Parent = MainFrame
+FOVSlider.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+FOVSlider.BorderSizePixel = 0
+FOVSlider.Position = UDim2.new(0.550000012, 0, 0.75, 0)
+FOVSlider.Size = UDim2.new(0, 100, 0, 20)
+FOVSlider.Font = Enum.Font.SciFi
+FOVSlider.PlaceholderText = "100"
+FOVSlider.Text = ""
+FOVSlider.TextColor3 = Color3.fromRGB(255, 255, 255)
+FOVSlider.TextSize = 12.000
+
+-- Scripts:
+local flyToggled = false
+local flySpeed = 50
+local bv = Instance.new("BodyVelocity")
+bv.Velocity = Vector3.new(0,0,0)
+bv.MaxForce = Vector3.new(100000,100000,100000)
+local bg = Instance.new("BodyGyro")
+bg.MaxTorque = Vector3.new(100000,100000,100000)
+
+FlyButton.MouseButton1Click:Connect(function()
+    flyToggled = not flyToggled
+    local character = game.Players.LocalPlayer.Character
+    if not character or not character:FindFirstChild("HumanoidRootPart") then return end
+    local hrp = character.HumanoidRootPart
+
+    if flyToggled then
+        FlyButton.Text = "Fly: ON"
+        bv.Parent = hrp
+        bg.Parent = hrp
+        local function fly()
+            local cam = workspace.CurrentCamera
+            bv.Velocity = cam.CFrame.LookVector * flySpeed
+        end
+        game:GetService("RunService").RenderStepped:Connect(fly)
+    else
+        FlyButton.Text = "Fly: OFF"
+        bv:Destroy()
+        bg:Destroy()
+    end
+end)
+
+FlySpeedSlider.FocusLost:Connect(function()
+    local newSpeed = tonumber(FlySpeedSlider.Text)
+    if newSpeed then
+        flySpeed = newSpeed
+    end
+    FlySpeedSlider.Text = ""
+end)
+
+local espToggled = false
+local espObjects = {}
+
+ESPButton.MouseButton1Click:Connect(function()
+    espToggled = not espToggled
+    if espToggled then
+        ESPButton.Text = "ESP: ON"
+        for i, player in ipairs(game.Players:GetPlayers()) do
+            if player ~= game.Players.LocalPlayer and player.Character then
+                local char = player.Character
+                local highlight = Instance.new("Highlight")
+                highlight.Parent = char
+                highlight.Adornee = char
+                highlight.FillColor = Color3.fromRGB(255, 105, 180)
+                highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+                highlight.Name = "BarsycESP"
+
+                local billboard = Instance.new("BillboardGui")
+                billboard.Parent = char.Head
+                billboard.Size = UDim2.new(0, 100, 0, 50)
+                billboard.StudsOffset = Vector3.new(0, 2, 0)
+                billboard.Adornee = char.Head
+
+                local nameLabel = Instance.new("TextLabel")
+                nameLabel.Parent = billboard
+                nameLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                nameLabel.BackgroundTransparency = 1
+                nameLabel.Text = player.Name
+                nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                nameLabel.Font = Enum.Font.SciFi
+                nameLabel.TextSize = 14
+
+                local healthLabel = Instance.new("TextLabel")
+                healthLabel.Parent = billboard
+                healthLabel.Size = UDim2.new(1, 0, 0.5, 0)
+                healthLabel.Position = UDim2.new(0, 0, 0.5, 0)
+                healthLabel.BackgroundTransparency = 1
+                healthLabel.Text = "HP: " .. tostring(char.Humanoid.Health)
+                healthLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                healthLabel.Font = Enum.Font.SciFi
+                healthLabel.TextSize = 12
+
+                char.Humanoid.HealthChanged:Connect(function()
+                    healthLabel.Text = "HP: " .. tostring(math.floor(char.Humanoid.Health))
+                end)
+
+                table.insert(espObjects, {highlight, billboard})
+            end
+        end
+    else
+        ESPButton.Text = "ESP: OFF"
+        for i, obj in ipairs(espObjects) do
+            obj[1]:Destroy()
+            obj[2]:Destroy()
+        end
+        espObjects = {}
+    end
+end)
+
+local aimbotToggled = false
+local fov = 100
+
+AimbotButton.MouseButton1Click:Connect(function()
+    aimbotToggled = not aimbotToggled
+    if aimbotToggled then
+        AimbotButton.Text = "Aimbot: ON"
+        FOVCircle.Visible = true
+    else
+        AimbotButton.Text = "Aimbot: OFF"
+        FOVCircle.Visible = false
+    end
+end)
+
+FOVSlider.FocusLost:Connect(function()
+    local newFOV = tonumber(FOVSlider.Text)
+    if newFOV then
+        fov = newFOV
+        FOVCircle.Size = UDim2.new(0, fov, 0, fov)
+    end
+    FOVSlider.Text = ""
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    if aimbotToggled then
+        local closestPlayer = nil
+        local closestDistance = fov
+        local localPlayer = game.Players.LocalPlayer
+        local localChar = localPlayer.Character
+        if not localChar then return end
+        local localHead = localChar:FindFirstChild("Head")
+        if not localHead then return end
+
+        for i, player in ipairs(game.Players:GetPlayers()) do
+            if player ~= localPlayer and player.Character then
+                local char = player.Character
+                local head = char:FindFirstChild("Head")
+                if head then
+                    local screenPoint, visible = workspace.CurrentCamera:WorldToViewportPoint(head.Position)
+                    local distance = (Vector2.new(screenPoint.X, screenPoint.Y) - Vector2.new(workspace.CurrentCamera.ViewportSize.X/2, workspace.CurrentCamera.ViewportSize.Y/2)).Magnitude
+                    if distance < closestDistance and visible then
+                        closestDistance = distance
+                        closestPlayer = player
+                    end
+                end
+            end
+        end
+
+        if closestPlayer then
+            local targetHead = closestPlayer.Character.Head
+            workspace.CurrentCamera.CFrame = CFrame.new(workspace.CurrentCamera.CFrame.Position, targetHead.Position)
+        end
+    end
+end)
